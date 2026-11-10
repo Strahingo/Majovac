@@ -87,6 +87,30 @@ nav ul{gap:var(--s2)}
 }
 @media (max-width:480px){.attr{grid-template-columns:1fr}header.top .wrap{padding-block:.4rem}.brand{font-size:1.7rem}nav a{font-size:.95rem}}
 @media (prefers-reduced-motion:reduce){.track{transition:none}html{scroll-behavior:auto}}
+/* responsive hardening */
+html,body{overflow-x:clip}
+.hero>*,.split>*,.contact>*{min-width:0}
+h1,h2,h3,p,li,figcaption{overflow-wrap:break-word}
+.wrap{width:min(1160px,calc(100% - 2.5rem - 2*max(env(safe-area-inset-left,0px),env(safe-area-inset-right,0px))))}
+nav a{padding:.65rem 0}
+.ctrl{flex-wrap:wrap;row-gap:0}
+.attr{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+#lbi{max-height:calc(100vh - 7rem);max-height:calc(100dvh - 7rem)}
+@media (max-width:860px){.arch{max-height:65vh}}
+@media (max-width:600px){
+header.top{position:static}
+html{scroll-padding-top:1rem}
+header.top .wrap{display:grid;grid-template-columns:1fr auto;align-items:center;gap:0 var(--s2);padding-block:.4rem}
+header.top nav{grid-column:1/-1;order:3}
+header.top nav ul{justify-content:space-between}
+.lang{min-height:40px}
+.dot{width:34px}.dots{gap:0}
+.arrow{width:44px;height:44px}
+.actions .btn{flex:1 1 100%;text-align:center}
+.slide figcaption{font-size:.9rem;padding-top:2rem}
+section{padding-block:3rem}
+}
+@media (max-height:500px) and (orientation:landscape){header.top{position:static}.fab{padding:.6rem 1rem;min-height:44px}}
 </style>
 </head>
 <body>
